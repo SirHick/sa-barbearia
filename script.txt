@@ -1,0 +1,29 @@
+create database barbearia;
+-- drop database barbearia;
+use barbearia;
+
+CREATE TABLE agendamentos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    cliente VARCHAR(100) NOT NULL,
+    telefone VARCHAR(20),
+    servico VARCHAR(100),
+    preco DECIMAL(10 , 2 ),
+    barbeiro VARCHAR(50),
+    data_agendamento DATE NOT NULL,
+    horario VARCHAR(5),
+    status_agendamento ENUM('Agendado', 'Concluído', 'Cancelado') DEFAULT 'Agendado'
+);
+
+INSERT INTO agendamentos (cliente, telefone, servico, preco, barbeiro, data_agendamento, horario, status_agendamento)
+VALUES 
+    ('Carlos Silva', '(47) 99111-2233', 'Cabelo e Barba', 75.00, 'Marlon', '2026-09-01', '09:00', 'Concluído'),
+    ('Ana Souza', '(47) 99222-3344', 'Corte Feminino Curto', 60.00, 'Igor', '2026-09-02', '10:30', 'Concluído'),
+    ('Lucas Pereira', '(47) 99333-4455', 'Barba', 35.00, 'Marlon', '2026-09-05', '14:00', 'Cancelado'),
+    ('Gabriel Santos', '(47) 99444-5566', 'Corte Masculino', 45.00, 'Rafael', '2026-09-10', '11:00', 'Concluído'),
+    ('Mariana Lima', '(47) 99555-6677', 'Sobrancelha', 25.00, 'Igor', '2026-09-11', '13:00', 'Agendado'),
+    ('Rodrigo Oliveira', '(47) 99666-7788', 'Cabelo e Barba', 75.00, 'Marlon', '2026-09-11', '15:30', 'Agendado'),
+    ('Felipe Costa', '(47) 99777-8899', 'Corte Masculino', 45.00, 'Rafael', '2026-09-12', '08:30', 'Agendado'),
+    ('Beatriz Rocha', '(47) 99888-9900', 'Pigmentação de Barba', 50.00, 'Igor', '2026-09-12', '16:00', 'Agendado'),
+    ('Thiago Martins', '(47) 99999-0011', 'Corte Infantil', 40.00, 'Rafael', '2026-09-13', '10:00', 'Agendado'),
+    ('João Pedro', '(47) 99000-1122', 'Cabelo e Barba', 75.00, 'Marlon', '2026-09-14', '17:00', 'Agendado');
+    
