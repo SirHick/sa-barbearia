@@ -1,4 +1,6 @@
 DB_CONFIG = {
-    "" : "localhost",
-
+    "host" : "localhost",
+    "user" : "root",
+    "password" : "root",
+    "database" : "barbearia"
 }
