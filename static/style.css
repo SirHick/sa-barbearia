@@ -6,7 +6,7 @@
 
 .titulo{
 
-    color: blue;
+    color: darkblue;
     justify-self: center;
 
 }
@@ -23,7 +23,7 @@
 
 .navBar a{
 
-    color : blue;
+    color : darkblue;
 
     text-decoration: none;
 
@@ -35,7 +35,7 @@
 
 .navBar a:hover{
 
-    background-color: blue;
+    background-color: darkblue;
 
     color: white;
 
@@ -48,4 +48,8 @@
 
     justify-self: center;
 
+}
+
+.linha{
+    width: 90vw;
 }

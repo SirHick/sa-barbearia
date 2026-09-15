@@ -37,11 +37,21 @@
                 <td>{{ agendamento.barbeiro }}</td>
                 <td>{{ agendamento.data_agendamento }}</td>
                 <td>{{ agendamento.horario}}</td>
+
                 {% if agendamento.status_agendamento == "Agendado"%}
-                <td style="color: yellow">{{ agendamento.status_agendamento}}</td>
+
+                <td style="background-color: orange; color: black">{{ agendamento.status_agendamento}}</td>
+
+                {% elif agendamento.status_agendamento == "Concluído" %}
+
+                <td style="background-color: green; color: white">{{ agendamento.status_agendamento}}</td>
+
                 {% else %}
-                <td>{{ agendamento.status_agendamento}}</td>
+
+                <td style = "background-color: red; color: white">{{ agendamento.status_agendamento}}</td>
+
                 {% endif %}
+
                 <td>
                     <a href="/agendamento/{{ agendamento.id }}">Ver Detalhes</a>
                 </td>
