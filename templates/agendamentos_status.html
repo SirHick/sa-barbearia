@@ -2,12 +2,25 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Todos os Agendamentos</title>
+    <title>Agendamentos por Status</title>
 </head>
 <body>
-    <h1>Lista de Agendamentos</h1>
-    <a href="/">Voltar ao Início</a> | <a href="/agendamentos/status/">Filtrar por Status</a>
+    <h1>Filtrar Agendamentos por Status</h1>
+    <a href="/">Voltar ao Início</a> | <a href="/agendamentos">Ver Todos</a>
     <br><br>
+
+    <div>
+        <strong>Filtrar por:</strong>
+        <a href="/agendamentos/status/">Todos</a> |
+        <a href="/agendamentos/status/?status=Pendente">Pendente</a> |
+        <a href="/agendamentos/status/?status=Confirmado">Confirmado</a> |
+        <a href="/agendamentos/status/?status=Cancelado">Cancelado</a>
+    </div>
+
+    <br>
+    {% if status_atual %}
+        <p>Exibindo apenas: <strong>{{ status_atual }}</strong></p>
+    {% endif %}
 
     <table border="1" cellpadding="8">
         <thead>
@@ -15,7 +28,6 @@
                 <th>ID</th>
                 <th>Cliente</th>
                 <th>Serviço</th>
-                <th>Barbeiro</th>
                 <th>Data</th>
                 <th>Status</th>
                 <th>Ações</th>
@@ -27,16 +39,15 @@
                 <td>{{ agendamento.id }}</td>
                 <td>{{ agendamento.cliente }}</td>
                 <td>{{ agendamento.servico }}</td>
-                <td>{{ agendamento.barbeiro }}</td>
                 <td>{{ agendamento.data_agendamento }}</td>
                 <td>{{ agendamento.status_agendamento }}</td>
                 <td>
-                    <a href="/agendamento/{{ agendamento.id }}">Ver Detalhes</a>
+                    <a href="/agendamento/{{ agendamento.id }}">Detalhes</a>
                 </td>
             </tr>
             {% else %}
             <tr>
-                <td colspan="7">Nenhum agendamento cadastrado.</td>
+                <td colspan="6">Nenhum agendamento encontrado para este status.</td>
             </tr>
             {% endfor %}
         </tbody>

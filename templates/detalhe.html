@@ -1,10 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Detalhes do Agendamento</title>
 </head>
 <body>
+    <h1>Detalhes do Agendamento</h1>
+    <a href="/agendamentos">Voltar para a lista</a>
+    <hr>
 
+    {% if agendamento %}
+        <ul>
+            <li><strong>ID:</strong> {{ agendamento.id }}</li>
+            <li><strong>Cliente:</strong> {{ agendamento.cliente }}</li>
+            <li><strong>Telefone:</strong> {{ agendamento.telefone }}</li>
+            <li><strong>Serviço:</strong> {{ agendamento.servico }}</li>
+            <li><strong>Preço:</strong> R$ {{ agendamento.preco }}</li>
+            <li><strong>Barbeiro:</strong> {{ agendamento.barbeiro }}</li>
+            <li><strong>Data do Agendamento:</strong> {{ agendamento.data_agendamento }}</li>
+            <li><strong>Status:</strong> {{ agendamento.status_agendamento }}</li>
+        </ul>
+    {% else %}
+        <p><strong>Agendamento não encontrado!</strong> Forneça um ID válido (ex: <code>/agendamento/1</code> ou <code>/agendamento/?id=1</code>).</p>
+    {% endif %}
 </body>
 </html>
