@@ -3,13 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Todos os Agendamentos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
 </head>
 <body>
-    <h1>Lista de Agendamentos</h1>
-    <a href="/">Voltar ao Início</a> | <a href="/agendamentos/status/">Filtrar por Status</a>
+    <h1 class="titulo">Lista de Agendamentos</h1>
+    <nav class = "navBar">
+        <a href="/">Voltar ao Início</a>
+
+        <a href="/agendamentos/status/">Filtrar por Status</a>
+    </nav>
     <br><br>
 
-    <table border="1" cellpadding="8">
+    <table class="tabela-agendamentos" border="1" cellpadding="8">
         <thead>
             <tr>
                 <th>ID</th>
@@ -17,6 +23,7 @@
                 <th>Serviço</th>
                 <th>Barbeiro</th>
                 <th>Data</th>
+                <th>Horário</th>
                 <th>Status</th>
                 <th>Ações</th>
             </tr>
@@ -29,7 +36,12 @@
                 <td>{{ agendamento.servico }}</td>
                 <td>{{ agendamento.barbeiro }}</td>
                 <td>{{ agendamento.data_agendamento }}</td>
-                <td>{{ agendamento.status_agendamento }}</td>
+                <td>{{ agendamento.horario}}</td>
+                {% if agendamento.status_agendamento == "Agendado"%}
+                <td style="color: yellow">{{ agendamento.status_agendamento}}</td>
+                {% else %}
+                <td>{{ agendamento.status_agendamento}}</td>
+                {% endif %}
                 <td>
                     <a href="/agendamento/{{ agendamento.id }}">Ver Detalhes</a>
                 </td>

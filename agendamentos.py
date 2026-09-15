@@ -4,8 +4,8 @@ from banco import conectar
 from models import Agendamento
 
 def listar_agendamentos():
-    conexao = None
 
+    conexao = None
     try:
         conexao = conectar()
         cursor = conexao.cursor()
@@ -51,7 +51,7 @@ def listar_por_status(status):
     try:
         conexao = conectar()
         cursor = conexao.cursor()
-        cursor.execute("SELECT * FROM agendamentos WHERE status = %s",(status,))
+        cursor.execute("SELECT * FROM agendamentos WHERE status_agendamento = %s",(status,))
 
         return [Agendamento.reverte_tupla(linha) for linha in cursor.fetchall()]
 

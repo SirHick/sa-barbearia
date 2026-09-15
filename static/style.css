@@ -1,0 +1,51 @@
+*{
+    font-family: 'Roboto', sans-serif;
+
+}
+
+
+.titulo{
+
+    color: blue;
+    justify-self: center;
+
+}
+
+.navBar{
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 30px;
+
+}
+
+.navBar a{
+
+    color : blue;
+
+    text-decoration: none;
+
+    font-weigth: bold;
+
+    padding: 10px;
+
+}
+
+.navBar a:hover{
+
+    background-color: blue;
+
+    color: white;
+
+    transition: 0.5s;
+
+    border-radius: 8px;
+}
+
+.tabela-agendamentos{
+
+    justify-self: center;
+
+}

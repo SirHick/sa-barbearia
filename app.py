@@ -8,7 +8,7 @@ app = Flask(__name__)
 @app.route("/")
 def index():
     nome_barbearia = "Barbearia Estilo & Corte"
-    total_agendamentos = agendamentos.contar_agendamentos()
+    total_agendamentos = len(agendamentos.listar_agendamentos())
 
     return render_template(
         "index.html",
