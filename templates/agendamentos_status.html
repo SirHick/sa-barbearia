@@ -7,11 +7,17 @@
 
 </head>
 <body>
-    <h1 style="color: blue">Filtrar Agendamentos por Status</h1>
-    <a href="/">Voltar ao Início</a> | <a href="/agendamentos">Ver Todos</a>
-    <br><br>
+    <h1 class = "titulo">Filtrar Agendamentos por Status</h1>
 
-    <div>
+    <nav class="navBar">
+        <a href="/">Voltar ao Início</a>
+        <a href="/agendamentos">Ver Todos</a>
+    </nav>
+
+<hr class="linha">
+
+<div class="tabela">
+    <div class="filtro">
         <strong>Filtrar por:</strong>
         <a href="/agendamentos/status/">Todos</a> |
         <a href="/agendamentos/status/?status=Pendente">Pendente</a> |
@@ -24,7 +30,8 @@
         <p>Exibindo apenas: <strong>{{ status_atual }}</strong></p>
     {% endif %}
 
-    <table border="1" cellpadding="8">
+    <div class="tabelaAzul">
+    <table border="1" cellpadding="8" >
         <thead>
             <tr>
                 <th>ID</th>
@@ -42,7 +49,20 @@
                 <td>{{ agendamento.cliente }}</td>
                 <td>{{ agendamento.servico }}</td>
                 <td>{{ agendamento.data_agendamento }}</td>
-                <td>{{ agendamento.status_agendamento }}</td>
+
+                {% if agendamento.status_agendamento == "Agendado"%}
+
+                <td style="background-color: orange;">{{ agendamento.status_agendamento}}</td>
+
+                {% elif agendamento.status_agendamento == "Concluído" %}
+
+                <td style="background-color: green; color: white">{{ agendamento.status_agendamento}}</td>
+
+                {% else %}
+
+                <td style = "background-color: red; color: white" >{{ agendamento.status_agendamento}}</td>
+
+                {% endif %}
                 <td>
                     <a href="/agendamento/{{ agendamento.id }}">Detalhes</a>
                 </td>
@@ -54,5 +74,7 @@
             {% endfor %}
         </tbody>
     </table>
+    </div>
+</div>
 </body>
 </html>

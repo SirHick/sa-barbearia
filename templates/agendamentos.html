@@ -14,7 +14,7 @@
         <a href="/agendamentos/status/">Filtrar por Status</a>
     </nav>
     <br><br>
-
+    <div class="tabelaAzul">
     <table class="tabela-agendamentos" border="1" cellpadding="8">
         <thead>
             <tr>
@@ -40,7 +40,7 @@
 
                 {% if agendamento.status_agendamento == "Agendado"%}
 
-                <td style="background-color: orange; color: black">{{ agendamento.status_agendamento}}</td>
+                <td style="background-color: orange;">{{ agendamento.status_agendamento}}</td>
 
                 {% elif agendamento.status_agendamento == "Concluído" %}
 
@@ -48,7 +48,7 @@
 
                 {% else %}
 
-                <td style = "background-color: red; color: white">{{ agendamento.status_agendamento}}</td>
+                <td style = "background-color: red; color: white" >{{ agendamento.status_agendamento}}</td>
 
                 {% endif %}
 
@@ -63,5 +63,6 @@
             {% endfor %}
         </tbody>
     </table>
+    </div>
 </body>
 </html>

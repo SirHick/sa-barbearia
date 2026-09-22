@@ -53,3 +53,69 @@
 .linha{
     width: 90vw;
 }
+
+.filtro{
+
+}
+
+.tabela{
+
+    justify-self: center;
+
+    margin-top: 3rem;
+
+    text-align: center;
+}
+
+.tabela a{
+
+    text-decoration: none;
+
+    color: darkblue;
+}
+
+.tabela a:hover{
+
+    text-decoration: underline;
+
+    cursor-pointer: pointer;
+}
+
+.tabelaAzul table {
+	border-collapse: collapse;
+}
+.tabelaAzul table th {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 15px;
+	font-weight: 700;
+	background: darkblue;
+	color: white;
+}
+.tabelaAzul table thead th {
+	padding: 15px 20px;
+
+}
+.tabelaAzul td,
+.tabelaAzul th {
+	border: 1px solid #ffffff;
+	padding: 10px 20px;
+}
+.tabelaAzul table td {
+	background: #f1f1f1;
+	font-family: 'Lato', sans-serif;
+	font-size: 13px;
+	color: #666666;
+	word-wrap: break-word;
+}
+
+.tabelaAzul tbody tr:hover td,
+.tabelaAzul tbody tr:hover td strong,
+.tabelaAzul tbody tr:hover td a {
+	background-color: darkblue !important;
+	color: white;
+}
+
+
+.tabelaAzul tbody tr:hover .status{
+    color: white;
+}

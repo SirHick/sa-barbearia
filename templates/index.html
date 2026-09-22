@@ -7,17 +7,20 @@
 
 </head>
 <body>
-    <h1 style="color: blue">Bem-vindo à {{ nome_barbearia }}</h1>
-    <hr>
 
-    <h3>Painel Geral</h3>
-    <p>Total de agendamentos cadastrados: <strong>{{ total }}</strong></p>
+    <h1 class="titulo" >Bem-vindo à {{ nome_barbearia }}</h1>
+    <hr class = "linha">
 
-    <nav>
-        <ul>
-            <li><a href="/agendamentos">Ver todos os agendamentos</a></li>
-            <li><a href="/agendamentos/status/">Agendamentos por Status</a></li>
-        </ul>
+    <nav class="navBar">
+        <a href="/agendamentos">Ver todos os agendamentos</a>
+        <a href="/agendamentos/status/">Agendamentos por Status</a>
     </nav>
+
+
+    <div style ="justify-self:center; text-align-center; margin-top: 3rem; background: darkblue; color: white; border-radius: 8px; padding: 10px">
+        <h3 style=" justify-self:center;">Painel Geral</h3>
+        <p>Total de agendamentos cadastrados: <strong>{{ total }}</strong></p>
+    </div>
+
 </body>
 </html>
